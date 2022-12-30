@@ -33,6 +33,7 @@ body{
   font-weight: 400;
   padding: 0 16px;
   color: hsla(210, 9%, 9%, 1); /* grey90 */
+  overflow-x: hidden;
 }
 @media (min-width: 768px){
   body{
@@ -193,5 +194,51 @@ ul li:before{
   ul li:before{
     top: 4px;
     left: -4px;
+  }
+}
+
+
+/* Таблица */
+.table-wrapper{
+  overflow-x: scroll;
+  width: 100%;
+}
+
+table{
+  margin: 36px 0 48px 0;
+  padding: 0;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: hsla(210, 10%, 96%, 1); /* grey3 */
+  table-layout: fixed;
+  border-radius: 6px;
+  min-width: 600px;
+  max-width: 600px;
+}
+
+th{
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  color: hsla(210, 9%, 9%, 1); /* grey90 */
+  padding: 24px 0 24px 24px;
+}
+th:last-child{
+  padding-right: 24px;
+}
+td{
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: hsla(210, 9%, 9%, 1); /* grey90 */
+  padding: 0 0 24px 24px;
+}
+td:last-child{
+  padding-right: 24px;
+}
+@media (min-width: 768px){
+  td{
+    font-size: 17px;
+    line-height: 24px;
   }
 }
