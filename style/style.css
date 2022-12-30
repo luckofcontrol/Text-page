@@ -1,0 +1,197 @@
+@font-face {
+   font-family: "PT Root UI";
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+   src: local("PT Root UI"),
+   url(../fonts/pt-root-ui_regular.woff2);
+}
+
+
+@font-face {
+   font-family: "PT Root UI";
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+   src: local("PT Root UI-medium"),
+   url(../fonts/pt-root-ui_medium.woff2);
+}
+
+
+@font-face {
+   font-family: "PT Root UI";
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+   src: local("PT Root UI-bold"),
+   url(../fonts/pt-root-ui_bold.woff2);
+}
+
+
+body{
+  font-family: "PT Root UI", sans-serif;
+  font-weight: 400;
+  padding: 0 16px;
+  color: hsla(210, 9%, 9%, 1); /* grey90 */
+}
+@media (min-width: 768px){
+  body{
+    padding: 0 24px;
+  }
+}
+
+
+main{
+  max-width: 912px;
+}
+
+
+/* Разметка блоков страницы */
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 48px 0;
+}
+@media (min-width: 768px){
+  img{
+    margin: 60px 0;
+  }
+}
+
+
+/* body2 */
+p{
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 0 16px;
+  max-width: 520px;
+}
+/* body1 */
+@media (min-width: 768px){
+  p{
+    font-size: 17px;
+    line-height: 24px;
+    max-width: 704px;
+  }
+}
+
+
+/* Title1 */
+h1{
+  font-size: 29px;
+  line-height: 36px;
+  margin: 0  0  24px;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+}
+/* LargeTitle */
+@media (min-width: 768px){
+  h1{
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+
+/* Title2 */
+h2{
+  font-size: 24px;
+  line-height: 28px;
+  margin: 36px 0 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 768px){
+  h2{
+    margin: 48px 0 16px;
+  }
+}
+
+
+/* Title3 */
+h3{
+  font-size: 20px;
+  line-height: 24px;
+  margin: 24px 0 8px;
+  font-weight: 700;
+}
+
+
+/* Списки */
+ul, ol{
+  margin: 0;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: num;
+}
+
+
+/* Элементы списков */
+/* body2 */
+li{
+  position: relative;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 0 16px;
+  padding: 0 0 0 36px;
+  max-width: 520px;
+}
+/* body1 */
+@media (min-width: 768px){
+  li{
+    font-size: 17px;
+    line-height: 24px;
+    max-width: 704px;
+  }
+}
+
+
+/* Стиль цифр — Caption. Выравниваются с li по baseline */
+ol li:before{
+  position: absolute;
+  display: inline-block;
+  top: 2px;
+  left: -4px;
+  counter-increment: section;
+  content: counter(num) '.';
+  counter-increment: num;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  color: hsla(205, 9%, 46%, 1); /* grey50 */
+  min-width: 24px;
+  text-align: right;
+}
+@media (min-width: 768px){
+  ol li:before{
+    top: 5px;
+    left: -4px;
+  }
+}
+
+
+/* Стиль тире — Caption. Выравниваются с li по baseline */
+ul li:before{
+  position: absolute;
+  display: inline-block;
+  top: 2px;
+  left: -4px;
+  counter-increment: section;
+  content: "—";
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  color: hsla(205, 9%, 46%, 1); /* grey50 */
+  min-width: 24px;
+  text-align: right;
+}
+@media (min-width: 768px){
+  ul li:before{
+    top: 4px;
+    left: -4px;
+  }
+}
