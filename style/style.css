@@ -1,3 +1,17 @@
+:root{
+  --grey90: #151719;
+  --grey50: #66727B;
+  --grey20: #C2C8CC;
+  --grey10: #E1E4E6;
+  --grey3: #F4F5F6;
+
+  --brand50: #EC0932;
+  --brand60: #C2052E;
+
+  --primary50: #0A79CB;
+}
+
+
 @font-face {
    font-family: "PT Root UI";
    font-weight: 400;
@@ -31,23 +45,53 @@
 body{
   font-family: "PT Root UI", sans-serif;
   font-weight: 400;
-  padding: 0 16px;
-  color: hsla(210, 9%, 9%, 1); /* grey90 */
+  padding: 48px 16px 0;
+  color: var(--grey90);
   overflow-x: hidden;
 }
 @media (min-width: 768px){
   body{
-    padding: 0 24px;
+    padding: 48px 24px;
   }
 }
 
 
 main{
-  max-width: 912px;
+  max-width: 808px; /* 8 колонок на десктопе, для примера */
+}
+
+
+footer{
+  margin-top: 72px;
 }
 
 
 /* Разметка блоков страницы */
+
+a{
+  text-decoration: none;
+  color: var(--grey50);
+  border-bottom: 1px solid var(--grey20);
+}
+
+
+a:hover{
+  color: var(--brand50);
+  border-bottom-color: hsla(349, 93%, 48%, .5); /* --brand50 */
+}
+
+
+a:active{
+  color: var(--brand60);
+  border-bottom-color: hsla(347, 95%, 39%, 0.5); /* --brand60 */
+}
+
+
+.psevdolink{
+  color: var(--primary50);
+  border-bottom: 1px dashed hsla(205, 91%, 42%, 0.5);
+}
+
 
 img{
   display: block;
@@ -62,16 +106,17 @@ img{
 }
 
 
-/* body2 */
+/* Основной текст, параграф */
 p{
+  /* body2 */
   font-size: 15px;
   line-height: 20px;
   margin: 0 0 16px;
   max-width: 520px;
 }
-/* body1 */
 @media (min-width: 768px){
   p{
+    /* body1 */
     font-size: 17px;
     line-height: 24px;
     max-width: 704px;
@@ -79,25 +124,27 @@ p{
 }
 
 
-/* Title1 */
+/* Заголовок h1 */
 h1{
+  /* Title1 */
   font-size: 29px;
   line-height: 36px;
   margin: 0  0  24px;
   font-weight: 700;
   letter-spacing: -0.012em;
 }
-/* LargeTitle */
 @media (min-width: 768px){
   h1{
+    /* LargeTitle */
     font-size: 35px;
     line-height: 40px;
   }
 }
 
 
-/* Title2 */
+/* Заголовок h2 */
 h2{
+  /* Title2 */
   font-size: 24px;
   line-height: 28px;
   margin: 36px 0 12px;
@@ -111,8 +158,9 @@ h2{
 }
 
 
-/* Title3 */
+/* Заголовок h3 */
 h3{
+  /* Title3 */
   font-size: 20px;
   line-height: 24px;
   margin: 24px 0 8px;
@@ -131,9 +179,9 @@ ul, ol{
 }
 
 
-/* Элементы списков */
-/* body2 */
+/* Элементы списков, основаны на стиле основного текста */
 li{
+  /* body2 */
   position: relative;
   font-size: 15px;
   line-height: 20px;
@@ -141,9 +189,9 @@ li{
   padding: 0 0 0 36px;
   max-width: 520px;
 }
-/* body1 */
 @media (min-width: 768px){
   li{
+    /* body1 */
     font-size: 17px;
     line-height: 24px;
     max-width: 704px;
@@ -163,7 +211,7 @@ ol li:before{
   font-size: 13px;
   line-height: 16px;
   font-weight: 500;
-  color: hsla(205, 9%, 46%, 1); /* grey50 */
+  color: var(--grey50);
   min-width: 24px;
   text-align: right;
 }
@@ -186,7 +234,7 @@ ul li:before{
   font-size: 13px;
   line-height: 16px;
   font-weight: 500;
-  color: hsla(205, 9%, 46%, 1); /* grey50 */
+  color: var(--grey50);
   min-width: 24px;
   text-align: right;
 }
@@ -198,7 +246,65 @@ ul li:before{
 }
 
 
-/* Таблица */
+/* Стили для мелких подписей и сео-текста и его списки. Стиль текста Caption, не меняет размер на адаптиве */
+
+.caption,
+.caption-list-item{
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  margin: 0 0 12px;
+  max-width: 400px;
+}
+
+
+.caption-list{
+  margin-bottom: 16px;
+}
+
+
+.caption-list-item{
+  padding: 0 0 0 24px;
+}
+
+
+/* Стиль цифр — Caption. Выравниваются с li по baseline */
+ol li.caption-list-item:before{
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: -4px;
+  counter-increment: section;
+  content: counter(num) '.';
+  counter-increment: num;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--grey50);
+  min-width: 24px;
+  text-align: right;
+}
+
+
+/* Стиль тире — Caption. Выравниваются с li по baseline */
+ul li.caption-list-item:before{
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: -4px;
+  counter-increment: section;
+  content: "—";
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--grey50);
+  min-width: 24px;
+  text-align: right;
+}
+
+
+/* Таблица. Верстать можно как угодно, тут код скорее для примера */
+
 .table-wrapper{
   overflow-x: scroll;
   width: 100%;
@@ -209,7 +315,7 @@ table{
   padding: 0;
   border-collapse: collapse;
   text-align: left;
-  background-color: hsla(210, 10%, 96%, 1); /* grey3 */
+  background-color: var(--grey3);
   table-layout: fixed;
   border-radius: 6px;
   min-width: 600px;
@@ -241,4 +347,59 @@ td:last-child{
     font-size: 17px;
     line-height: 24px;
   }
+}
+
+
+/* Врезка */
+.special{
+  margin: 36px 0 48px;
+  padding: 16px 16px 4px;
+  background-color: var(--grey3);
+  border-radius: 6px;
+}
+@media (min-width: 768px){
+  .special{
+    padding: 24px 24px 12px;
+  }
+}
+
+
+.special h2,
+.special h3{
+  margin-top: 0;
+}
+
+
+/* Содержание */
+.content-links{
+  margin: 16px 0 36px;
+}
+@media (min-width: 768px){
+  .content-links{
+    margin: 24px 0 60px;
+  }
+}
+
+
+.content-links-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.content-links-list-item{
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.content-links-list-item:before{
+  display: none;
+}
+
+
+/* Просто дял примера */
+.seo-text{
+  padding: 24px 0 0;
+  border-top: 1px solid var(--grey10);
 }
