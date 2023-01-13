@@ -97,12 +97,7 @@ img{
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 48px 0;
-}
-@media (min-width: 768px){
-  img{
-    margin: 60px 0;
-  }
+  margin: 24px 0 48px;
 }
 
 
@@ -248,7 +243,7 @@ ul li:before{
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   max-width: 400px;
 }
 
@@ -306,7 +301,7 @@ ul li.caption-list-item:before{
 }
 
 table{
-  margin: 36px 0 48px 0;
+  margin: 8px 0 32px 0;
   padding: 0;
   border-collapse: collapse;
   text-align: left;
@@ -347,7 +342,7 @@ td:last-child{
 
 /* Врезка */
 .special{
-  margin: 36px 0 48px;
+  margin: 24px 0 32px;
   padding: 16px 16px 4px;
   background-color: var(--grey3);
   border-radius: 6px;
@@ -386,6 +381,11 @@ td:last-child{
 .content-links-list-item{
   padding: 0;
   margin-bottom: 12px;
+}
+@media (min-width: 768px){
+  .content-links-list-item{
+  margin-bottom: 8px;   
+  }
 }
 
 .content-links-list-item:before{
